@@ -7,7 +7,7 @@ export const site = {
   name: "Begüm Alakuş",
   shortName: "begüm",
   title: "Mobile & AI Engineer",
-  tagline: "I build mobile products end to end and weave AI into them.",
+  tagline: "I turn ideas into stable mobile products that run on the App Store.",
   description:
     "Begüm Alakuş — a computer engineer who builds mobile apps end to end with React Native and integrates AI into them.",
   url: "https://begumalakus.com", // to be updated once the domain is bought

@@ -5,7 +5,7 @@ export const site = {
   name: "Begüm Alakuş",
   shortName: "begüm",
   title: "Mobile & AI Engineer",
-  tagline: "Mobil uygulamaları uçtan uca geliştiriyor, içine yapay zekâ yerleştiriyorum.",
+  tagline: "Fikirleri App Store'da çalışan stabil mobil ürünlere dönüştürüyorum.",
   description:
     "Begüm Alakuş — React Native ile uçtan uca mobil uygulamalar geliştiren ve ürünlere yapay zekâ entegre eden bilgisayar mühendisi.",
   url: "https://begumalakus.com", // alan adı alınınca güncellenecek
