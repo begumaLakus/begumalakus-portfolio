@@ -25,7 +25,7 @@ export const ui = {
     codeElse: "Kod dışında",
     countLabels: { projects: "öne çıkan proje", internships: "staj deneyimi", community: "topluluk & gönüllülük deneyimi", skills: "teknoloji ve beceri" },
     paragraphs: [
-      "Bilgisayar Mühendisliği mezunuyum. React Native ile kullanıcı tarafında sade ve akıcı arayüzler, arka planda ise patlamayan sağlam servisler kuruyorum. Geliştirme sürecimde güncel AI araçlarını mimariyi hızlandırmak ve edge-case'leri yakalamak için aktif birer çalışma arkadaşı gibi kullanıyorum.",
+      "Bilgisayar Mühendisliği mezunuyum. React Native ile kullanıcı tarafında sade ve akıcı arayüzler, arka planda ise stabil ve güvenilir servisler kuruyorum. Geliştirme sürecimde güncel AI araçlarını mimariyi hızlandırmak ve edge-case'leri yakalamak için aktif birer çalışma arkadaşı gibi kullanıyorum.",
       "Bilgisayar başından kalktığımda beni genelde koşuda veya sporda bulabilirsiniz; kod tabanında aradığım o dinamizmi ve disiplini günün her anına yaymayı seviyorum.",
     ] as [string, string],
   },
@@ -39,7 +39,7 @@ export const ui = {
     prev: "Önceki fotoğraflar",
     next: "Sonraki fotoğraflar",
   },
-  skills: { eyebrow: "Yetenekler", hint: "Bir teknolojinin üzerine gel, nerede kullandığımı gör." },
+  skills: { eyebrow: "Yetenekler", heading: "Kullandığım teknolojiler ve nerede kullandığım", hint: "Bir teknolojinin üzerine gel, nerede kullandığımı gör." },
   services: { eyebrow: "Uzmanlık Alanları", lead: "Ölçeklenebilir, performans odaklı mobil, web ve yapay zekâ destekli yazılım sistemleri geliştiriyorum." },
   contact: {
     eyebrow: "İletişim",

@@ -43,11 +43,11 @@ export async function generateMetadata({ params }: LayoutProps<"/[locale]">): Pr
       type: "website",
       locale: isEn ? "en_US" : "tr_TR",
       title: `${site.name} · ${site.title}`,
-      description: site.tagline,
+      description: site.description,
       url: isEn ? "/en" : "/",
       siteName: site.name,
     },
-    twitter: { card: "summary_large_image", title: `${site.name} · ${site.title}`, description: site.tagline },
+    twitter: { card: "summary_large_image", title: `${site.name} · ${site.title}`, description: site.description },
   };
 }
 

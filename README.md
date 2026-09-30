@@ -18,4 +18,4 @@ Next.js · TypeScript · elle yazılmış CSS · Resend
 
 ## Site
 
-<!-- Vercel'e yayınlandıktan sonra buraya eklenecek -->
+[begumalakus.vercel.app](https://begumalakus.vercel.app)

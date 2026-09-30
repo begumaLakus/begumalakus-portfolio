@@ -6,7 +6,7 @@ export function Skills({ locale }: { locale: Locale }) {
   return (
     <section className="block" id="yetenekler" style={{ paddingTop: 0 }}>
       <div className="wrap">
-        <div className="sec-head rv"><div><span className="label">{ui.skills.eyebrow}</span><h2 className="h2">{locale === "en" ? "My tech stack and where I use it" : "Teknik yığınım ve nerede kullandığım"}</h2></div></div>
+        <div className="sec-head rv"><div><span className="label">{ui.skills.eyebrow}</span><h2 className="h2">{ui.skills.heading}</h2></div></div>
         <p className="sk-hint rv"><i />{ui.skills.hint}</p>
         <div className="bento">
           {skills.map((g, i) => (

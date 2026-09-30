@@ -24,7 +24,7 @@ export const ui = {
     codeElse: "Outside of code",
     countLabels: { projects: "featured projects", internships: "internships", community: "community & volunteer roles", skills: "technologies & skills" },
     paragraphs: [
-      "I'm a Computer Engineering graduate. With React Native, I build interfaces that feel simple and fluid on the user's side, backed by services that hold up under pressure. In my dev process, I treat today's AI tools as active work partners — speeding up architecture decisions and catching edge cases early.",
+      "I'm a Computer Engineering graduate. With React Native, I build interfaces that feel simple and fluid on the user's side, backed by services that are stable and reliable. In my dev process, I treat today's AI tools as active work partners — speeding up architecture decisions and catching edge cases early.",
       "Step away from the screen and you'll usually find me running or at the gym; I like carrying that same dynamism and discipline from the codebase into the rest of the day.",
     ] as [string, string],
   },
@@ -38,7 +38,7 @@ export const ui = {
     prev: "Previous photos",
     next: "Next photos",
   },
-  skills: { eyebrow: "Skills", hint: "Hover a technology to see where I've used it." },
+  skills: { eyebrow: "Skills", heading: "The technologies I use and where", hint: "Hover a technology to see where I've used it." },
   services: { eyebrow: "Areas of Expertise", lead: "I build scalable, performance-minded mobile, web, and AI-powered software systems." },
   contact: {
     eyebrow: "Contact",
