@@ -1,8 +1,8 @@
 /* ============ TELEFON ============ */
 .phone { --w: 250px; width: var(--w); height: calc(var(--w) * 2.13); border-radius: 42px; padding: 10px; flex: none; position: relative;
-  background: linear-gradient(145deg, color-mix(in srgb, var(--ink) 78%, white 22%), var(--ink) 45%, color-mix(in srgb, var(--ink) 85%, white 15%));
-  box-shadow: inset 0 0 0 1px rgba(255,255,255,.08), inset 0 0 0 2px rgba(0,0,0,.35), 0 40px 70px -40px rgba(34,29,26,.55), 0 18px 30px -24px rgba(34,29,26,.45); }
-.phone::after { content: ""; position: absolute; right: -2px; top: 120px; width: 3px; height: 54px; border-radius: 3px; background: rgba(255,255,255,.16); }
+  background: linear-gradient(145deg, #F3EEEA, #D9CFC7 45%, #EFE9E4);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.8), inset 0 0 0 2px rgba(34,29,26,.08), 0 40px 70px -40px rgba(34,29,26,.5), 0 18px 30px -24px rgba(169,135,111,.6); }
+.phone::after { content: ""; position: absolute; right: -2px; top: 120px; width: 3px; height: 54px; border-radius: 3px; background: #D3C8BF; }
 .phone::before { content: ""; position: absolute; left: 50%; bottom: -30px; translate: -50% 0; width: 74%; height: 26px; border-radius: 50%;
   background: radial-gradient(ellipse at center, color-mix(in srgb, var(--ink) 45%, transparent) 0%, transparent 72%); z-index: -1; pointer-events: none; }
 .scaled { display: grid; place-items: center; }
