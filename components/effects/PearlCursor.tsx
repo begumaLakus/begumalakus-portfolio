@@ -13,6 +13,8 @@ export function PearlCursor() {
     const cvs = canvasRef.current!, glow = glowRef.current!;
     const ctx = cvs.getContext("2d")!;
     const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const touch = matchMedia("(pointer: coarse)").matches;
+    if (reduce || touch) { glow.style.display = "none"; return; }
     let W = 0, H = 0, raf = 0;
     const size = () => {
       const d = Math.min(devicePixelRatio || 1, 2);

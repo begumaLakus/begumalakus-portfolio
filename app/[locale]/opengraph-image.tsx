@@ -1,3 +1,5 @@
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
 import { ImageResponse } from "next/og";
 import { dict, locales, type Locale } from "@/content/i18n";
 
@@ -20,52 +22,67 @@ async function loadFont(weight: number, text: string) {
 export default async function OpengraphImage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const loc = (locales.includes(locale as Locale) ? locale : "tr") as Locale;
-  const { site } = dict[loc];
+  const { site, ui } = dict[loc];
   const domain = "begumalakus.vercel.app";
-  const text = `${site.name}${site.title}${site.tagline}${domain}B`;
+  const text = `${site.name}${site.title}${site.tagline}${domain}B${ui.about.openToWork}${site.location}`;
 
   const [light, medium, bold] = await Promise.all([loadFont(300, text), loadFont(500, text), loadFont(700, text)]);
+  const portrait = readFileSync(join(process.cwd(), "public/images/portrait-circle.png"));
+  const portraitSrc = `data:image/png;base64,${portrait.toString("base64")}`;
 
   return new ImageResponse(
     (
       <div
         style={{
-          width: "100%", height: "100%", display: "flex", flexDirection: "column",
-          background: "#FAF8F6", padding: "72px", position: "relative", fontFamily: "Jakarta",
+          width: "100%", height: "100%", display: "flex", alignItems: "center",
+          background: "#FAF8F6", padding: "60px", position: "relative", fontFamily: "Jakarta", gap: 56,
         }}
       >
-        <div
-          style={{
-            position: "absolute", top: -140, right: -140, width: 460, height: 460, borderRadius: "50%",
-            background: "radial-gradient(circle, #F4EAE4 0%, rgba(244,234,228,0) 70%)", display: "flex",
-          }}
-        />
-        <div
-          style={{
-            position: "absolute", bottom: -160, left: -100, width: 360, height: 360, borderRadius: "50%",
-            background: "radial-gradient(circle, #EADBD1 0%, rgba(234,219,209,0) 70%)", display: "flex",
-          }}
-        />
-        <div
-          style={{
-            width: 88, height: 88, borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center",
-            background: "radial-gradient(circle at 32% 28%, #fff 0%, #F4EAE4 45%, #EADBD1 100%)",
-            border: "1px solid #fff", fontSize: 36, fontWeight: 300, color: "#221D1A",
-          }}
-        >
-          B
-        </div>
-        <div style={{ display: "flex", flexDirection: "column", marginTop: 36 }}>
-          <div style={{ fontSize: 24, fontWeight: 500, color: "#A9876F", display: "flex", letterSpacing: "-0.01em" }}>{site.name}</div>
-          <div style={{ fontSize: 74, fontWeight: 700, color: "#221D1A", marginTop: 10, letterSpacing: "-0.035em", lineHeight: 1.05, display: "flex", maxWidth: 1000 }}>
-            {site.title}
+        <div style={{ position: "absolute", top: -160, left: -140, width: 480, height: 480, borderRadius: "50%",
+          background: "radial-gradient(circle, #F4EAE4 0%, rgba(244,234,228,0) 70%)", display: "flex" }} />
+
+        <div style={{ display: "flex", flexDirection: "column", flex: "1 1 0", height: "100%", justifyContent: "center", zIndex: 1 }}>
+          <div style={{ display: "flex", fontSize: 22, fontWeight: 600, letterSpacing: "0.12em", color: "#8E857E" }}>
+            {ui.about.eyebrow.toUpperCase()}
           </div>
-          <div style={{ fontSize: 27, fontWeight: 300, color: "#4E4641", marginTop: 26, maxWidth: 860, lineHeight: 1.45, display: "flex" }}>
+          <div style={{ display: "flex", fontSize: 54, fontWeight: 700, color: "#221D1A", marginTop: 18, letterSpacing: "-0.03em", lineHeight: 1.12, maxWidth: 620 }}>
             {site.tagline}
           </div>
+          <div style={{ display: "flex", alignItems: "center", gap: 16, marginTop: 44 }}>
+            <div style={{
+              width: 56, height: 56, borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center",
+              background: "radial-gradient(circle at 32% 28%, #fff 0%, #F4EAE4 45%, #EADBD1 100%)",
+              border: "1px solid #fff", fontSize: 22, fontWeight: 300, color: "#221D1A",
+            }}>
+              B
+            </div>
+            <div style={{ display: "flex", flexDirection: "column" }}>
+              <div style={{ display: "flex", fontSize: 22, fontWeight: 600, color: "#221D1A" }}>{site.name}</div>
+              <div style={{ display: "flex", fontSize: 19, fontWeight: 500, color: "#A9876F" }}>{domain}</div>
+            </div>
+          </div>
         </div>
-        <div style={{ marginTop: "auto", display: "flex", alignItems: "center" }}>
-          <div style={{ fontSize: 21, color: "#8E857E", fontWeight: 500, display: "flex" }}>{domain}</div>
+
+        <div style={{
+          display: "flex", flexDirection: "column", justifyContent: "flex-end", position: "relative",
+          width: 420, height: "100%", borderRadius: 28, overflow: "hidden", flex: "none",
+          boxShadow: "0 30px 60px -30px rgba(34,29,26,.35)",
+        }}>
+          <img src={portraitSrc} width={420} height={630} style={{ position: "absolute", inset: 0, objectFit: "cover" }} />
+          <div style={{
+            position: "absolute", top: 20, left: 20, display: "flex", alignItems: "center", gap: 8,
+            background: "rgba(255,255,255,.88)", borderRadius: 999, padding: "9px 16px", fontSize: 17, fontWeight: 600, color: "#221D1A",
+          }}>
+            <div style={{ width: 8, height: 8, borderRadius: "50%", background: "#6E9A7B", display: "flex" }} />
+            {ui.about.openToWork}
+          </div>
+          <div style={{
+            display: "flex", justifyContent: "space-between", padding: "18px 20px",
+            background: "linear-gradient(to top, rgba(0,0,0,.55), transparent)",
+          }}>
+            <div style={{ display: "flex", fontSize: 16, fontWeight: 600, letterSpacing: "0.05em", color: "#fff" }}>{site.name.toUpperCase()}</div>
+            <div style={{ display: "flex", fontSize: 16, fontWeight: 600, letterSpacing: "0.05em", color: "#fff" }}>{site.location.toUpperCase()}</div>
+          </div>
         </div>
       </div>
     ),
