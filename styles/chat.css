@@ -1,0 +1,42 @@
+/* ============ SOHBET ASİSTANI ============ */
+.fab { position: fixed; right: 20px; bottom: calc(20px + env(safe-area-inset-bottom, 0px)); z-index: 35; display: inline-flex; align-items: center; gap: 10px; padding: 8px 18px 8px 8px; border-radius: 999px; background: var(--ink); color: var(--bg); border: 0; font: 600 14px var(--sans); cursor: pointer; box-shadow: 0 20px 40px -18px rgba(34,29,26,.55); transition: transform .3s var(--ease), opacity .3s; }
+.fab:hover { transform: translateY(-3px); }
+.fab .me { width: 34px; height: 34px; font-size: 14px; color: var(--ink); box-shadow: none; }
+.fab.hide { opacity: 0; pointer-events: none; transform: translateY(20px); }
+.drawer { position: fixed; z-index: 36; right: 16px; top: 16px; bottom: calc(16px + env(safe-area-inset-bottom, 0px)); width: min(430px, calc(100% - 32px)); background: var(--surface); border: 1px solid var(--line); border-radius: 28px; box-shadow: 0 40px 90px -30px rgba(34,29,26,.45);
+  display: flex; flex-direction: column; overflow: hidden; transform: translateX(calc(100% + 40px)); transition: transform .55s var(--ease); visibility: hidden; }
+.drawer.open { transform: none; visibility: visible; }
+@media (max-width: 560px) { .drawer { left: 8px; right: 8px; width: auto; top: 12%; bottom: 8px; transform: translateY(110%); } }
+.d-head { display: flex; align-items: center; gap: 12px; padding: 16px 18px; border-bottom: 1px solid var(--line); }
+.d-head .me { width: 40px; height: 40px; font-size: 16px; box-shadow: none; }
+.d-head .t { font-weight: 600; font-size: 15px; line-height: 1.2; }
+.d-head .s { font-size: 12.5px; color: var(--muted); display: flex; gap: 6px; align-items: center; }
+.d-head .s i { width: 6px; height: 6px; border-radius: 50%; background: var(--ok); }
+.x { margin-left: auto; width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--line); background: var(--surface); cursor: pointer; display: grid; place-items: center; flex: none; }
+.log { flex: 1; overflow-y: auto; padding: 20px 18px; display: flex; flex-direction: column; gap: 20px; }
+.d-foot { padding: 10px 14px 14px; border-top: 1px solid var(--line); }
+.d-foot .chips { justify-content: flex-start; margin: 0 0 10px; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+.d-foot .chips::-webkit-scrollbar { display: none; }
+.d-foot .chip { flex: none; }
+.d-foot .ask { box-shadow: none; background: var(--bg); }
+.msg-u { align-self: flex-end; max-width: 85%; background: var(--ink); color: var(--bg); padding: 10px 15px; border-radius: 18px 18px 4px 18px; font-size: 14.5px; }
+.msg-b { display: grid; grid-template-columns: 30px 1fr; gap: 10px; align-items: start; }
+.msg-b .me { width: 30px; height: 30px; font-size: 12px; box-shadow: none; }
+.bubble { font-size: 15px; line-height: 1.62; color: #332C28; padding-top: 3px; min-width: 0; }
+.bubble p { margin: 0 0 8px; }
+.bubble p:last-child { margin-bottom: 0; }
+.thinking { display: inline-flex; gap: 5px; padding-top: 10px; }
+.thinking i { width: 6px; height: 6px; border-radius: 50%; background: var(--blush-2); animation: dot 1.2s infinite var(--ease); }
+.thinking i:nth-child(2) { animation-delay: .15s; } .thinking i:nth-child(3) { animation-delay: .3s; }
+@keyframes dot { 0%, 100% { transform: translateY(0); background: var(--blush-2); } 40% { transform: translateY(-5px); background: var(--accent); } }
+.note { font-size: 12px; color: var(--muted); margin-top: 8px; }
+.mini-btn { font: 500 12px var(--sans); background: none; border: 1px solid var(--line); border-radius: 999px; padding: 4px 10px; color: var(--muted); cursor: pointer; }
+.embed { margin-top: 12px; }
+.mini-row { display: flex; gap: 10px; overflow-x: auto; padding: 4px 2px 10px; }
+.mini { flex: none; width: 140px; background: var(--bg); border: 1px solid var(--line); border-radius: 18px; padding: 10px; cursor: pointer; text-align: left; transition: transform .3s var(--ease); }
+.mini:hover { transform: translateY(-3px); }
+.mini .stage-s { height: 160px; display: grid; place-items: center; background: var(--blush); border-radius: 12px; overflow: hidden; }
+.mini b { display: block; font-size: 13px; font-weight: 600; margin-top: 8px; line-height: 1.25; }
+.card-embed { background: var(--bg); border: 1px solid var(--line); border-radius: 18px; padding: 14px 16px; font-size: 13.5px; }
+.kv { display: grid; grid-template-columns: 96px 1fr; gap: 6px 12px; margin: 0; }
+.kv dt { color: var(--muted); } .kv dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }

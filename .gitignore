@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# ham fotoğraflar (kişisel, büyük) — yalnızca işlenmiş halleri public/images altında
+/assets/raw
+!.env.example
+# taslağın görselleri (public/images ile aynı fotoğraflar)
+/design/img

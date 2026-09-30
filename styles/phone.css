@@ -1,0 +1,59 @@
+/* ============ TELEFON ============ */
+.phone { --w: 250px; width: var(--w); height: calc(var(--w) * 2.13); border-radius: 42px; padding: 10px; flex: none; position: relative;
+  background: linear-gradient(145deg, #F3EEEA, #D9CFC7 45%, #EFE9E4);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.8), inset 0 0 0 2px rgba(34,29,26,.08), 0 40px 70px -40px rgba(34,29,26,.5), 0 18px 30px -24px rgba(169,135,111,.6); }
+.phone::after { content: ""; position: absolute; right: -2px; top: 120px; width: 3px; height: 54px; border-radius: 3px; background: #D3C8BF; }
+.scaled { display: grid; place-items: center; }
+.scaled > .phone { transform: scale(var(--s, 1)); transform-origin: center; margin: calc(var(--w) * 2.13 * (var(--s, 1) - 1) / 2) calc(var(--w) * (var(--s, 1) - 1) / 2); }
+.float { animation: floaty 6.5s ease-in-out infinite; }
+.float.d2 { animation-delay: -2.2s; }
+@keyframes floaty { 0%, 100% { translate: 0 0; } 50% { translate: 0 -12px; } }
+.screen { height: 100%; border-radius: 33px; overflow: hidden; background: #fff; display: flex; flex-direction: column; position: relative; color: #1E1A18; text-align: left; }
+.island { position: absolute; top: 8px; left: 50%; translate: -50% 0; width: 78px; height: 22px; background: #1E1A18; border-radius: 20px; z-index: 3; }
+.sbar { display: flex; justify-content: space-between; padding: 11px 22px 0; font-size: 11px; font-weight: 600; height: 36px; }
+.app { flex: 1; padding: 8px 15px 15px; display: flex; flex-direction: column; gap: 9px; min-height: 0; }
+.app h4 { margin: 0; font-size: 18px; font-weight: 600; letter-spacing: -.02em; line-height: 1.15; }
+.app .sm { font-size: 10.5px; color: #8E857E; }
+.pill { display: inline-flex; align-items: center; gap: 5px; font-size: 10px; font-weight: 600; padding: 4px 9px; border-radius: 999px; }
+.pix { display: grid; grid-template-columns: repeat(16, 1fr); gap: 1px; background: #F1ECE8; border-radius: 12px; padding: 5px; aspect-ratio: 1; }
+.pix i { border-radius: 2px; background: #fff; }
+.pix i.c { animation: pixIn 8s var(--ease) infinite; animation-delay: var(--d); opacity: 0; }
+@keyframes pixIn { 0% { opacity: 0; transform: scale(.3); } 6% { opacity: 1; transform: scale(1); } 80% { opacity: 1; transform: scale(1); } 90%, 100% { opacity: 0; transform: scale(.6); } }
+.pal { display: flex; gap: 6px; justify-content: center; }
+.pal b { width: 20px; height: 20px; border-radius: 50%; border: 2px solid #fff; box-shadow: 0 0 0 1px #E7E0DA; }
+.vote { margin-top: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.vote span { text-align: center; font-size: 12px; font-weight: 600; padding: 10px; border-radius: 12px; }
+.ow { border: 1px solid #EEE8E3; border-radius: 13px; padding: 9px 11px; display: grid; gap: 6px; }
+.ow .row { display: flex; justify-content: space-between; font-size: 12px; font-weight: 600; }
+.bar { height: 5px; border-radius: 5px; background: #F2EDE9; overflow: hidden; }
+.bar i { display: block; height: 100%; border-radius: 5px; background: #1E1A18; width: var(--v); animation: grow 6s var(--ease) infinite; }
+@keyframes grow { 0% { width: 0; } 25%, 85% { width: var(--v); } 100% { width: 0; } }
+.ow-ai { background: #1E1A18; color: #F6F1ED; border-radius: 13px; padding: 11px 12px; font-size: 11.5px; line-height: 1.45; }
+.ow-ai b { display: block; font-size: 9.5px; letter-spacing: .12em; text-transform: uppercase; color: #CDB5A3; margin-bottom: 4px; font-weight: 600; }
+/* OwnWay: envanter testi + kampüs karşılaştırma haritası (gerçek özelliklere göre) */
+.quest { border: 1px solid #EEE8E3; border-radius: 13px; padding: 11px 12px; font-size: 12px; line-height: 1.42; color: #332C28; }
+.likert { display: flex; justify-content: space-between; align-items: center; padding: 1px 5px; }
+.likert i { width: 19px; height: 19px; border-radius: 50%; border: 1.5px solid #E2D9D2; }
+.likert i.on { background: #1E1A18; border-color: #1E1A18; }
+.likert-lab { display: flex; justify-content: space-between; font-size: 8px; color: #ADA39B; padding: 0 1px; }
+.map { border-radius: 13px; background: linear-gradient(160deg, #F7F1EC, #EFE6DE); padding: 10px; position: relative; overflow: hidden; flex: 1; min-height: 92px; }
+.map svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.map .pin { position: absolute; width: 8px; height: 8px; border-radius: 50%; background: #1E1A18; box-shadow: 0 0 0 4px rgba(30,26,24,.1); animation: pinPulse 2.6s var(--ease) infinite; animation-delay: var(--d); }
+.map .pin::after { content: attr(data-l); position: absolute; top: 11px; left: 50%; translate: -50% 0; font: 600 8px var(--mono); color: #746A62; white-space: nowrap; }
+@keyframes pinPulse { 0%, 100% { box-shadow: 0 0 0 4px rgba(30,26,24,.1); } 50% { box-shadow: 0 0 0 7px rgba(30,26,24,.05); } }
+.tile { position: relative; border-radius: 13px; overflow: hidden; aspect-ratio: 1; }
+.tile svg { width: 100%; height: 100%; display: block; }
+.bb { position: absolute; border: 2px solid #E0564A; border-radius: 4px; animation: boxIn 5s var(--ease) infinite; animation-delay: var(--d); opacity: 0; }
+.bb span { position: absolute; top: -17px; left: -2px; color: #fff; font: 600 9px var(--mono); padding: 2px 5px; border-radius: 3px 3px 3px 0; white-space: nowrap; }
+@keyframes boxIn { 0% { opacity: 0; transform: scale(1.3); } 10%, 85% { opacity: 1; transform: scale(1); } 100% { opacity: 0; } }
+.det { display: grid; gap: 5px; }
+.det div { display: flex; justify-content: space-between; font-size: 11.5px; padding: 7px 10px; border-radius: 10px; background: #F7F3F0; }
+.det code { font-family: var(--mono); }
+.cv-row { display: grid; gap: 4px; }
+.cv-strip { display: grid; grid-template-columns: repeat(6, 1fr); height: 34px; border-radius: 9px; overflow: hidden; }
+.cv-strip.wipe { animation: wipe 5s var(--ease) infinite; }
+@keyframes wipe { 0% { clip-path: inset(0 100% 0 0); } 30%, 88% { clip-path: inset(0 0 0 0); } 100% { clip-path: inset(0 0 0 0); opacity: 0; } }
+.cv-lab { display: flex; justify-content: space-between; font-size: 10.5px; font-weight: 600; }
+.cv-lab span:last-child { color: #8E857E; font-weight: 500; }
+.lms { margin-top: auto; border-radius: 13px; background: #F7F3F0; padding: 10px 12px; font: 10.5px/1.55 var(--mono); color: #8E857E; }
+.lms b { color: #1E1A18; font-weight: 500; }

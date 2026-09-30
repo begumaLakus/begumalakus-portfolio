@@ -1,0 +1,27 @@
+/* ============ YETENEKLER ============ */
+/* Bento: her alan bir kart, teknolojiler çip; "nerede kullandım" çipin üstüne gelince görünür */
+.sk-hint { margin: 16px 0 0; font-size: 14px; color: var(--muted); display: inline-flex; gap: 8px; align-items: center; }
+.sk-hint i { width: 7px; height: 7px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #fff, var(--blush-2)); box-shadow: 0 0 0 1px var(--blush-2); }
+.bento { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 36px; }
+.sk { background: var(--surface); border: 1px solid var(--line); border-radius: 28px; padding: clamp(22px, 2.6vw, 30px); display: flex; flex-direction: column; gap: 18px; position: relative; }
+.sk.wide { grid-column: span 2; }
+.sk.full { grid-column: 1 / -1; flex-direction: row; align-items: center; justify-content: space-between; flex-wrap: wrap; }
+@media (max-width: 900px) { .bento { grid-template-columns: 1fr 1fr; } .sk.wide { grid-column: span 2; } }
+@media (max-width: 620px) { .bento { grid-template-columns: 1fr; } .sk.wide { grid-column: auto; } }
+.sk .top { display: flex; align-items: center; gap: 14px; }
+.sk .ico { width: 44px; height: 44px; border-radius: 14px; background: var(--blush); color: var(--accent); display: grid; place-items: center; flex: none; }
+.sk h3 { margin: 0; font-size: 21px; font-weight: 500; letter-spacing: -.025em; line-height: 1.2; }
+.sk .desc { margin: 2px 0 0; font-size: 14px; color: var(--muted); }
+.chips2 { display: flex; flex-wrap: wrap; gap: 8px; }
+.tech { position: relative; font-size: 14.5px; font-weight: 500; padding: 9px 15px; border-radius: 999px; background: var(--bg); border: 1px solid var(--line); cursor: default; transition: background .25s, border-color .25s, transform .25s var(--ease); outline-offset: 2px; }
+.tech:hover, .tech:focus-visible { background: var(--blush); border-color: var(--blush-2); transform: translateY(-2px); }
+.tech[data-used]::after { content: attr(data-used); position: absolute; left: 50%; bottom: calc(100% + 8px); translate: -50% 4px; white-space: nowrap; font: 500 11.5px var(--sans); color: var(--bg); background: var(--ink); padding: 6px 10px; border-radius: 10px; opacity: 0; pointer-events: none; transition: opacity .2s, translate .2s var(--ease); z-index: 3; }
+.tech[data-used]:hover::after, .tech[data-used]:focus-visible::after { opacity: 1; translate: -50% 0; }
+.sk.dark { background: var(--espresso); border-color: var(--espresso); color: #F4EFEB; overflow: hidden; }
+.sk.dark::before { content: ""; position: absolute; width: 360px; height: 360px; right: -120px; top: -150px; border-radius: 50%; background: radial-gradient(circle, rgba(169,135,111,.35), transparent 65%); pointer-events: none; }
+.sk.dark .ico { background: rgba(255,255,255,.08); color: #E3CDBE; }
+.sk.dark .desc { color: #BDB2AA; }
+.sk.dark .tech { background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.12); color: #F4EFEB; }
+.sk.dark .tech:hover, .sk.dark .tech:focus-visible { background: rgba(227,205,190,.16); border-color: rgba(227,205,190,.4); }
+.sk.dark .tech[data-used]::after { background: #F4EFEB; color: var(--ink); }
+.sk .note2 { margin-top: auto; font-size: 13px; color: #BDB2AA; }

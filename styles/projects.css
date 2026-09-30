@@ -1,0 +1,32 @@
+/* ============ PROJELER — yapışkan telefon ============ */
+.show { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 6vw, 90px); margin-top: 40px; }
+.steps { display: grid; }
+.step { min-height: 88vh; display: flex; flex-direction: column; justify-content: center; padding-block: 40px; opacity: .3; transition: opacity .6s var(--ease); }
+.step.on { opacity: 1; }
+.step .kind { display: inline-flex; gap: 10px; align-items: center; }
+.step .kind i { width: 28px; height: 1px; background: var(--accent); }
+.step h3 { font-weight: 300; font-size: clamp(36px, 4.6vw, 58px); letter-spacing: -.045em; line-height: 1.02; margin: 16px 0 0; }
+.step p { font-size: 16.5px; color: var(--body); max-width: 46ch; margin: 16px 0 0; }
+.step ul { list-style: none; margin: 18px 0 0; padding: 0; display: grid; gap: 8px; max-width: 50ch; }
+.step li { font-size: 15px; color: var(--body); padding-left: 18px; position: relative; }
+.step li::before { content: ""; position: absolute; left: 0; top: 11px; width: 8px; height: 1px; background: var(--accent); }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.tag { font-family: var(--mono); font-size: 11.5px; padding: 4px 10px; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); color: var(--body); }
+.step .tags { margin-top: 20px; }
+.step .inline-phone { display: none; }
+.stick { position: sticky; top: calc(var(--nav-h) + 4vh); height: calc(100vh - var(--nav-h) - 8vh); display: grid; place-items: center; }
+.stick-bg { position: absolute; inset: 0; border-radius: 36px; background: radial-gradient(80% 65% at 50% 45%, #fff 0%, var(--blush) 55%, var(--blush-2) 100%); }
+.stick .holder { position: relative; transition: transform .8s var(--ease); }
+.stack-screens { position: relative; }
+.stack-screens > .scaled { position: absolute; inset: 0; opacity: 0; transition: opacity .6s var(--ease); }
+.stack-screens > .scaled:first-child { position: relative; }
+.stack-screens > .scaled.on { opacity: 1; }
+.dots { position: absolute; bottom: 22px; left: 50%; translate: -50% 0; display: flex; gap: 8px; }
+.dots button { width: 8px; height: 8px; border-radius: 8px; border: 0; padding: 0; background: rgba(169,135,111,.35); cursor: pointer; transition: width .4s var(--ease), background .4s; }
+.dots button.on { width: 26px; background: var(--accent); }
+@media (max-width: 900px) {
+  .show { grid-template-columns: 1fr; }
+  .stick { display: none; }
+  .step { min-height: 0; opacity: 1; padding-block: 34px; border-top: 1px solid var(--line); }
+  .step .inline-phone { display: grid; place-items: center; margin-top: 28px; padding: 28px 0; border-radius: 28px; background: radial-gradient(80% 65% at 50% 45%, #fff 0%, var(--blush) 55%, var(--blush-2) 100%); }
+}

@@ -1,0 +1,39 @@
+/* ============ İLETİŞİM ============ */
+.contact { background: var(--ink); color: #F4EFEB; border-radius: 36px; padding: clamp(36px, 7vw, 88px); position: relative; overflow: hidden; }
+.contact::before { content: ""; position: absolute; width: 520px; height: 520px; right: -140px; top: -180px; border-radius: 50%; background: radial-gradient(circle, rgba(169,135,111,.35), transparent 65%); }
+.contact .label { color: #A99E96; }
+.contact h2 { position: relative; font-weight: 200; font-size: clamp(40px, 5.4vw, 78px); line-height: .98; letter-spacing: -.05em; margin: 16px 0 0; max-width: 12ch; }
+.contact h2 b { font-weight: 500; color: #E3CDBE; }
+.contact .row { position: relative; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-top: 40px; }
+.mail { display: inline-flex; align-items: center; gap: 10px; border: 1px solid #45403C; border-radius: 999px; padding: 6px 6px 6px 20px; font-family: var(--mono); font-size: 14px; }
+.mail span { user-select: all; }
+.mail button { font: 600 13px var(--sans); border: 0; border-radius: 999px; padding: 9px 15px; background: #F4EFEB; color: var(--ink); cursor: pointer; }
+.contact a.o { text-decoration: none; font-size: 14.5px; padding: 12px 18px; border-radius: 999px; border: 1px solid #45403C; transition: border-color .2s, color .2s; }
+.contact a.o:hover { border-color: #E3CDBE; color: #E3CDBE; }
+.contact .grid { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 80px); align-items: start; }
+@media (max-width: 900px) { .contact .grid { grid-template-columns: 1fr; } }
+.contact .intro p { color: #BDB2AA; font-size: 16px; max-width: 40ch; margin: 22px 0 0; }
+.form { display: grid; gap: 14px; background: rgba(255,255,255,.04); border: 1px solid #3A3531; border-radius: 26px; padding: clamp(20px, 3vw, 30px); }
+.form .two { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+@media (max-width: 560px) { .form .two { grid-template-columns: 1fr; } }
+.field { display: grid; gap: 7px; }
+.field label { font-size: 13px; color: #BDB2AA; font-weight: 500; }
+.field input, .field textarea { width: 100%; font: 400 15px var(--sans); color: #F4EFEB; background: rgba(255,255,255,.05); border: 1px solid #3F3A36; border-radius: 14px; padding: 13px 15px; transition: border-color .2s, background .2s; }
+.field textarea { min-height: 130px; resize: vertical; }
+.field input::placeholder, .field textarea::placeholder { color: #7D736C; }
+.field input:focus, .field textarea:focus { outline: none; border-color: #E3CDBE; background: rgba(255,255,255,.08); }
+.field [aria-invalid="true"] { border-color: #E08C7A; }
+.field .err { font-size: 12.5px; color: #F0A898; min-height: 0; }
+.topics { display: flex; flex-wrap: wrap; gap: 8px; border: 0; padding: 0; margin: 0; }
+.topics legend { font-size: 13px; color: #BDB2AA; font-weight: 500; margin-bottom: 8px; padding: 0; }
+.topics label { cursor: pointer; }
+.topics input { position: absolute; opacity: 0; pointer-events: none; }
+.topics span { display: inline-block; font-size: 13.5px; padding: 8px 14px; border-radius: 999px; border: 1px solid #45403C; color: #D9CFC8; transition: all .2s; }
+.topics input:checked + span { background: #F4EFEB; color: var(--ink); border-color: #F4EFEB; }
+.topics input:focus-visible + span { outline: 2px solid #E3CDBE; outline-offset: 2px; }
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.form .submit { justify-self: start; background: #F4EFEB; color: var(--ink); border: 0; font: 600 15px var(--sans); padding: 14px 22px; border-radius: 999px; cursor: pointer; display: inline-flex; gap: 8px; align-items: center; transition: transform .25s var(--ease), background .25s; }
+.form .submit:hover { transform: translateY(-2px); background: #fff; }
+.form .submit:disabled { opacity: .6; cursor: default; transform: none; }
+.form .status { font-size: 14px; color: #D9CFC8; background: rgba(255,255,255,.06); border-radius: 14px; padding: 12px 14px; }
+footer.site .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; padding-block: 30px 40px; font-size: 13px; color: var(--muted); }

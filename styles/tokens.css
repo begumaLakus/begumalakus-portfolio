@@ -1,0 +1,19 @@
+/* ============ TOKENLER — renk paleti geldiğinde yalnızca burası değişecek ============ */
+:root {
+  color-scheme: light;
+  --bg: #FAF8F6;        /* süt */
+  --surface: #FFFFFF;   /* porselen */
+  --ink: #221D1A;       /* espresso */
+  --body: #4E4641;      /* gövde metni */
+  --muted: #8E857E;     /* taupe */
+  --line: #ECE7E2;      /* ince çizgi */
+  --accent: #A9876F;    /* latte — tek vurgu */
+  --blush: #F4EAE4;     /* pudra */
+  --blush-2: #EADBD1;
+  --ok: #6E9A7B;
+  --sans: var(--font-jakarta), "Plus Jakarta Sans", "Segoe UI", system-ui, sans-serif;
+  --espresso: #221D1A;
+  --mono: var(--font-mono), "JetBrains Mono", ui-monospace, Consolas, monospace;
+  --ease: cubic-bezier(.2, .8, .2, 1);
+  --nav-h: 76px;
+}

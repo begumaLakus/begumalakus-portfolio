@@ -1,0 +1,7 @@
+/* ============ MARQUEE ============ */
+.marquee { border-block: 1px solid var(--line); background: var(--surface); overflow: hidden; position: relative; z-index: 1; }
+.marquee .track { display: flex; width: max-content; animation: slide 38s linear infinite; }
+.marquee:hover .track { animation-play-state: paused; }
+.marquee span { display: inline-flex; align-items: center; gap: 22px; padding: 20px 11px; font-size: clamp(18px, 2.2vw, 24px); font-weight: 300; letter-spacing: -.02em; white-space: nowrap; }
+.marquee span::after { content: ""; width: 7px; height: 7px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #fff, var(--blush-2)); box-shadow: 0 0 0 1px var(--blush-2); margin-left: 11px; }
+@keyframes slide { to { transform: translateX(-50%); } }

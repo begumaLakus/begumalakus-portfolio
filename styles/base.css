@@ -1,0 +1,28 @@
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: var(--nav-h); }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+a { color: inherit; }
+button { font-family: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 8px; }
+::selection { background: var(--blush-2); }
+
+/* İnci imleci ve ışığı bilerek İÇERİĞİN ARKASINDA: bir yazının ya da kartın üstündeki pikselleri
+   kaplamıyorlar, yalnızca boş zeminde görünen bir atmosfer efekti. */
+#pearls { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
+#glow { position: fixed; left: 0; top: 0; width: 520px; height: 520px; margin: -260px 0 0 -260px; border-radius: 50%; pointer-events: none; z-index: -1;
+  background: radial-gradient(circle, rgba(234,219,209,.7) 0%, rgba(244,234,228,.3) 40%, transparent 70%); will-change: transform; }
+#progress { position: fixed; top: 0; left: 0; height: 2px; width: 100%; transform-origin: 0 50%; transform: scaleX(0); background: var(--accent); z-index: 31; }
+
+.wrap { position: relative; z-index: 1; max-width: 1180px; margin: 0 auto; padding-inline: clamp(16px, 4vw, 40px); }
+.label { font-family: var(--mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.h2 { font-weight: 300; font-size: clamp(38px, 5.6vw, 68px); line-height: 1.02; letter-spacing: -.045em; margin: 14px 0 0; text-wrap: balance; }
+.h2 b { font-weight: 500; }
+.lead { font-size: 17px; color: var(--body); max-width: 58ch; margin: 18px 0 0; }
+section.block { padding-block: clamp(80px, 12vw, 150px); position: relative; }
+.sec-head { display: flex; justify-content: space-between; align-items: end; gap: 24px; flex-wrap: wrap; }
+
+/* Kaydırınca beliren öğeler (yalnızca ilk ekranın dışındakiler gizlenir) */
+.rv.pre { opacity: 0; transform: translateY(26px); }
+.rv { transition: opacity .9s var(--ease), transform .9s var(--ease); transition-delay: var(--rd, 0s); }
+[hidden] { display: none !important; }
+img { max-width: 100%; }
