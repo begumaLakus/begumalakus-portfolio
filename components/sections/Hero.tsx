@@ -13,7 +13,7 @@ export function Hero({ locale }: { locale: Locale }) {
         <div className="hero-phone r float d2"><Phone screen="ownway" scale={0.72} uid="hero-r" locale={locale} /></div>
         <div className="me" aria-hidden="true">B</div>
         <div className="hello">{ui.hero.hello}</div>
-        <h1 className="title"><b>Mobile</b> &amp; <b>AI</b><br />Engineer</h1>
+        <h1 className="title"><b>Mobile</b> Developer<br />&amp; AI Integration</h1>
         <Typer lines={[...site.terminal]} />
         <div className="hero-ctas">
           <a className="btn dark" href="#projeler">{ui.hero.ctaProjects} <Icon name="arrowDown" size={14} stroke={2.2} /></a>

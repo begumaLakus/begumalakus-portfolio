@@ -6,7 +6,7 @@
 export const site = {
   name: "Begüm Alakuş",
   shortName: "begüm",
-  title: "Mobile & AI Engineer",
+  title: "Mobile Developer & AI Integration",
   tagline: "I turn ideas into stable mobile products that run on the App Store.",
   description:
     "Begüm Alakuş — a computer engineer who builds mobile apps end to end with React Native and integrates AI into them.",

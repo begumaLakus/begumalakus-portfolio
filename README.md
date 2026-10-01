@@ -1,6 +1,6 @@
 # Begüm Alakuş · Portfolyo
 
-Kişisel portfolyo sitesi — Mobile & AI Engineer. Next.js (App Router) + TypeScript, TR/EN dil desteği, Resend ile iletişim formu.
+Kişisel portfolyo sitesi — Mobile Developer & AI Integration. Next.js (App Router) + TypeScript, TR/EN dil desteği, Resend ile iletişim formu.
 
 ## Çalıştırma
 
