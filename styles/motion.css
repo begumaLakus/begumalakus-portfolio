@@ -1,6 +1,6 @@
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
-  .pix i.c, .bb { opacity: 1; }
+  .bb { opacity: 1; }
   .rv.pre { opacity: 1; transform: none; }
 }

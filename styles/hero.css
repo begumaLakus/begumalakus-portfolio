@@ -22,7 +22,6 @@
 .chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 12px; }
 .chip { font: 500 12.5px var(--sans); color: var(--body); background: rgba(255,255,255,.7); border: 1px solid var(--line); border-radius: 999px; padding: 7px 13px; cursor: pointer; transition: all .2s; }
 .chip:hover { background: var(--surface); border-color: var(--blush-2); color: var(--ink); }
-.giant { margin-top: auto; padding-top: 40px; font-weight: 600; font-size: clamp(64px, 17vw, 240px); letter-spacing: -.07em; line-height: .78; text-align: center; white-space: nowrap; color: transparent; -webkit-text-stroke: 1px rgba(169,135,111,.24); user-select: none; transform: translateY(14%); }
 .hero-phone { position: absolute; top: 40px; z-index: -1; }
 .hero-phone.l { left: -10px; rotate: -8deg; }
 .hero-phone.r { right: -10px; rotate: 7deg; top: 120px; }

@@ -10,10 +10,7 @@ export const phone = {
     cities: { a: "Istanbul", b: "Ankara", c: "Izmir", d: "Zonguldak" },
   },
   pixel: {
-    live: "Live",
-    theme: "Today's theme: Tulip",
-    skip: "Skip",
-    vote: "Vote",
+    shots: ["Pixel Challenge home screen: today's theme", "Pixel drawing editor", "Past challenge champions"] as [string, string, string],
   },
   cini: {
     status: "Detected · 3 motifs · 41 ms",

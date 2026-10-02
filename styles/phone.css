@@ -19,15 +19,13 @@
 .app { flex: 1; padding: 8px 15px 15px; display: flex; flex-direction: column; gap: 9px; min-height: 0; }
 .app h4 { margin: 0; font-size: 18px; font-weight: 600; letter-spacing: -.02em; line-height: 1.15; }
 .app .sm { font-size: 10.5px; color: #8E857E; }
-.pill { display: inline-flex; align-items: center; gap: 5px; font-size: 10px; font-weight: 600; padding: 4px 9px; border-radius: 999px; }
-.pix { display: grid; grid-template-columns: repeat(16, 1fr); gap: 1px; background: #F1ECE8; border-radius: 12px; padding: 5px; aspect-ratio: 1; }
-.pix i { border-radius: 2px; background: #fff; }
-.pix i.c { animation: pixIn 8s var(--ease) infinite; animation-delay: var(--d); opacity: 0; }
-@keyframes pixIn { 0% { opacity: 0; transform: scale(.3); } 6% { opacity: 1; transform: scale(1); } 80% { opacity: 1; transform: scale(1); } 90%, 100% { opacity: 0; transform: scale(.6); } }
-.pal { display: flex; gap: 6px; justify-content: center; }
-.pal b { width: 20px; height: 20px; border-radius: 50%; border: 2px solid #fff; box-shadow: 0 0 0 1px #E7E0DA; }
-.vote { margin-top: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-.vote span { text-align: center; font-size: 12px; font-weight: 600; padding: 10px; border-radius: 12px; }
+/* Gerçek ekran görüntüleri: 12 sn'lik döngüde üçü sırayla belirir */
+.shots { position: absolute; inset: 0; }
+.shot { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top; opacity: 0; animation: shotFade 12s ease-in-out infinite; }
+.shot.s0 { opacity: 1; animation-delay: -.7s; }
+.shot.s1 { animation-delay: 3.3s; }
+.shot.s2 { animation-delay: 7.3s; }
+@keyframes shotFade { 0% { opacity: 0; } 6% { opacity: 1; } 33% { opacity: 1; } 39% { opacity: 0; } 100% { opacity: 0; } }
 .ow { border: 1px solid #EEE8E3; border-radius: 13px; padding: 9px 11px; display: grid; gap: 6px; }
 .ow .row { display: flex; justify-content: space-between; font-size: 12px; font-weight: 600; }
 .bar { height: 5px; border-radius: 5px; background: #F2EDE9; overflow: hidden; }

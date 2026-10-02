@@ -1,14 +1,14 @@
+import Image from "next/image";
 import type { CSSProperties } from "react";
 import type { ScreenId } from "@/content/tr/projects";
 import { dict, type Locale } from "@/content/i18n";
 
-// Telefon çerçevesinin içindeki canlı uygulama ekranları.
-// Gerçek ekran görüntüleri gelince bunların yerine <Image> konabilir.
+// Telefon çerçevesinin içindeki uygulama ekranları: kodla çizilenler ve gerçek ekran görüntüleri.
 
-const StatusBar = () => (
+const StatusBar = ({ bar = true }: { bar?: boolean }) => (
   <>
     <div className="island" />
-    <div className="sbar"><span>9:41</span><span>●●● ▮</span></div>
+    {bar && <div className="sbar"><span>9:41</span><span>●●● ▮</span></div>}
   </>
 );
 
@@ -44,25 +44,16 @@ function OwnWay({ locale }: { locale: Locale }) {
   );
 }
 
-const TULIP = ["................", "......R..R......", ".....RRRRRR.....", ".....RRRRRR.....", "......RRRR......", ".......GG.......", "....GG.GG.......", ".....GGGG...GG..", "......GGG.GGG...", ".......GGGG.....", ".......GG.......", "...BBBBBBBBBB...", "....BBBBBBBB....", "....BBBBBBBB....", ".....BBBBBB.....", "................"];
-const TCOL: Record<string, string> = { R: "#D9695A", G: "#7FA07A", B: "#C9A58B" };
+const PIXEL_SHOTS = ["/images/projects/pixel-home.png", "/images/projects/pixel-draw.webp", "/images/projects/pixel-champions.webp"];
 
-function PixelArt({ locale }: { locale: Locale }) {
-  const t = dict[locale].phone.pixel;
-  let k = 0;
-  const cells = TULIP.join("").split("").map((c, i) =>
-    c === "." ? <i key={i} /> : <i key={i} className="c" style={v({ background: TCOL[c], "--d": `${(k++ * 0.035).toFixed(3)}s` })} />
-  );
+/** Gerçek uygulama ekran görüntüleri, sırayla yumuşakça birbirine geçer. */
+function PixelShots({ locale }: { locale: Locale }) {
+  const alts = dict[locale].phone.pixel.shots;
   return (
-    <div className="app">
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-        <span className="pill" style={{ background: "#FBEDEA", color: "#C4544A" }}>● {t.live} · 02:14:09</span>
-        <span className="sm">#214</span>
-      </div>
-      <h4>{t.theme}</h4>
-      <div className="pix">{cells}</div>
-      <div className="pal">{["#D9695A", "#7FA07A", "#C9A58B", "#F2C6A8", "#1E1A18"].map((c) => <b key={c} style={{ background: c }} />)}</div>
-      <div className="vote"><span style={{ background: "#F7F3F0" }}>{t.skip}</span><span style={{ background: "#1E1A18", color: "#fff" }}>♥ {t.vote}</span></div>
+    <div className="shots">
+      {PIXEL_SHOTS.map((src, i) => (
+        <Image key={src} src={src} alt={alts[i]} width={590} height={1280} sizes="230px" className={`shot s${i}`} />
+      ))}
     </div>
   );
 }
@@ -130,9 +121,9 @@ function ColorVision({ locale }: { locale: Locale }) {
 export function Screen({ id, uid, locale }: { id: ScreenId; uid: string; locale: Locale }) {
   return (
     <div className="screen">
-      <StatusBar />
+      <StatusBar bar={id !== "pixel"} />
       {id === "ownway" && <OwnWay locale={locale} />}
-      {id === "pixel" && <PixelArt locale={locale} />}
+      {id === "pixel" && <PixelShots locale={locale} />}
       {id === "cini" && <TileArt uid={uid} locale={locale} />}
       {id === "renk" && <ColorVision locale={locale} />}
     </div>

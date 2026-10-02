@@ -11,10 +11,7 @@ export const phone = {
     cities: { a: "İstanbul", b: "Ankara", c: "İzmir", d: "Zonguldak" },
   },
   pixel: {
-    live: "Canlı",
-    theme: "Günün teması: Lale",
-    skip: "Atla",
-    vote: "Oy ver",
+    shots: ["Pixel Challenge ana ekranı: günün teması", "Piksel çizim editörü", "Geçmiş challenge şampiyonları"] as [string, string, string],
   },
   cini: {
     status: "Tespit · 3 motif · 41 ms",

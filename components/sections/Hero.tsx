@@ -21,7 +21,6 @@ export function Hero({ locale }: { locale: Locale }) {
         </div>
         <AskBar className="hero-ask" placeholder={ui.hero.askPlaceholder} askLabel={ui.hero.askLabel} chips={ui.hero.chips as [string, string][]} />
       </div>
-      <div className="giant" aria-hidden="true">{site.name}</div>
     </section>
   );
 }
